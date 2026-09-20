@@ -1,0 +1,521 @@
+<title>Hande'yi Bekliyorum</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;600;700&display=swap">
+<style>
+:root {
+  --bg: #FFF8F0;
+  --bg-card: #FFFFFF;
+  --text: #2D1B14;
+  --text-muted: #8C6B5D;
+  --accent: #C2185B;
+  --accent-soft: #F8BBD0;
+  --accent-deep: #880E4F;
+  --gold: #D4A574;
+  --gold-glow: rgba(212, 165, 116, 0.3);
+  --heart-color: #E91E63;
+  --card-shadow: 0 8px 32px rgba(45, 27, 20, 0.08);
+  --card-border: rgba(200, 160, 130, 0.15);
+  --digit-bg: rgba(194, 24, 91, 0.06);
+  --digit-border: rgba(194, 24, 91, 0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F0A1A;
+    --bg-card: #1A1226;
+    --text: #F5E6E0;
+    --text-muted: #B89A8E;
+    --accent: #F48FB1;
+    --accent-soft: #4A2040;
+    --accent-deep: #F8BBD0;
+    --gold: #E8C49A;
+    --gold-glow: rgba(232, 196, 154, 0.15);
+    --heart-color: #F48FB1;
+    --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --card-border: rgba(244, 143, 177, 0.12);
+    --digit-bg: rgba(244, 143, 177, 0.08);
+    --digit-border: rgba(244, 143, 177, 0.15);
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0F0A1A;
+  --bg-card: #1A1226;
+  --text: #F5E6E0;
+  --text-muted: #B89A8E;
+  --accent: #F48FB1;
+  --accent-soft: #4A2040;
+  --accent-deep: #F8BBD0;
+  --gold: #E8C49A;
+  --gold-glow: rgba(232, 196, 154, 0.15);
+  --heart-color: #F48FB1;
+  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --card-border: rgba(244, 143, 177, 0.12);
+  --digit-bg: rgba(244, 143, 177, 0.08);
+  --digit-border: rgba(244, 143, 177, 0.15);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Nunito', system-ui, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 16px;
+  padding-block: 2rem;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.hearts-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.floating-heart {
+  position: absolute;
+  bottom: -40px;
+  opacity: 0;
+  animation: floatUp linear forwards;
+  color: var(--heart-color);
+  filter: blur(0.5px);
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) rotate(0deg) scale(0.5); opacity: 0; }
+  10% { opacity: 0.15; }
+  50% { opacity: 0.1; }
+  100% { transform: translateY(-110vh) rotate(45deg) scale(1.2); opacity: 0; }
+}
+
+.main-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  max-width: 640px;
+  width: 100%;
+  text-align: center;
+}
+
+.eyebrow {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: var(--gold-glow);
+  padding: 0.4em 1.2em;
+  border-radius: 100px;
+}
+
+.headline {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text);
+  text-wrap: balance;
+}
+
+.headline .name {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 460px;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  width: 100%;
+  max-width: 520px;
+}
+
+@media (max-width: 440px) {
+  .countdown-grid { gap: 0.6rem; }
+}
+
+.countdown-unit {
+  background: var(--bg-card);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 1.25rem 0.5rem;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.countdown-unit:hover {
+  transform: translateY(-4px);
+}
+
+.digit-box {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--digit-bg);
+  border: 1px solid var(--digit-border);
+  border-radius: 10px;
+  padding: 0.15em 0.35em;
+  min-width: 2.2ch;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+  transition: color 0.3s;
+}
+
+.unit-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.flight-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--card-border);
+  border-radius: 100px;
+  padding: 0.75rem 1.5rem;
+  box-shadow: var(--card-shadow);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.flight-info .plane-icon {
+  font-size: 1.2rem;
+  animation: flyPlane 3s ease-in-out infinite;
+}
+
+@keyframes flyPlane {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  50% { transform: translateX(6px) rotate(-5deg); }
+}
+
+.message-card {
+  background: var(--bg-card);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: var(--card-shadow);
+  width: 100%;
+}
+
+.message-card p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.message-card .heart-divider {
+  color: var(--accent);
+  font-size: 1.5rem;
+  margin-block: 0.75rem;
+}
+
+.progress-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.progress-bar-track {
+  width: 100%;
+  height: 8px;
+  background: var(--digit-bg);
+  border-radius: 100px;
+  overflow: hidden;
+  border: 1px solid var(--digit-border);
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--gold));
+  border-radius: 100px;
+  transition: width 1s ease;
+  position: relative;
+}
+
+.progress-bar-fill::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  background: var(--gold);
+  border-radius: 50%;
+  border: 2px solid var(--bg-card);
+  box-shadow: 0 0 8px var(--gold-glow);
+}
+
+.progress-percent {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 0.95rem;
+  color: var(--accent);
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Celebration state */
+.celebration { display: none; }
+
+body.arrived .waiting { display: none; }
+body.arrived .celebration { display: flex; flex-direction: column; align-items: center; gap: 2rem; }
+
+.celebration-headline {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--accent);
+  text-wrap: balance;
+  animation: pulseIn 0.8s ease-out;
+}
+
+@keyframes pulseIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  60% { transform: scale(1.05); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.confetti-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.footer-note {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  opacity: 0.6;
+  margin-top: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-heart, .plane-icon, .celebration-headline {
+    animation: none !important;
+  }
+  .countdown-unit:hover { transform: none; }
+}
+</style>
+
+<div class="hearts-container" id="hearts"></div>
+
+<div class="main-content">
+  <!-- Waiting state -->
+  <div class="waiting">
+    <div class="eyebrow">Geri Sayım Başladı</div>
+    <h1 class="headline"><span class="name">Hande</span> Sefa'sına dönüyor</h1>
+    <p class="subtitle">Her saniye seni biraz daha yaklaştırıyor. Sabırsızlıkla bekliyorum.</p>
+
+    <div class="countdown-grid">
+      <div class="countdown-unit">
+        <div class="digit-box" id="days">--</div>
+        <span class="unit-label">Gün</span>
+      </div>
+      <div class="countdown-unit">
+        <div class="digit-box" id="hours">--</div>
+        <span class="unit-label">Saat</span>
+      </div>
+      <div class="countdown-unit">
+        <div class="digit-box" id="minutes">--</div>
+        <span class="unit-label">Dakika</span>
+      </div>
+      <div class="countdown-unit">
+        <div class="digit-box" id="seconds">--</div>
+        <span class="unit-label">Saniye</span>
+      </div>
+    </div>
+
+    <div class="progress-section">
+      <div class="progress-labels">
+        <span>Gitti</span>
+        <span>Dönüyor</span>
+      </div>
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" id="progressBar" style="width: 0%"></div>
+      </div>
+      <div class="progress-percent" id="progressText">%0 tamamlandı</div>
+    </div>
+
+    <div class="flight-info">
+      <span class="plane-icon">✈</span>
+      <span>27 Eylül, Cumartesi — Saat 10:00</span>
+    </div>
+
+    <div class="message-card">
+      <div class="heart-divider">♥</div>
+      <p>Sensiz geçen her dakika, seninle geçecek saatlerin ne kadar kıymetli olduğunu hatırlatıyor. Çabuk dön, burada her şey seni bekliyor.</p>
+      <div class="heart-divider">♥</div>
+    </div>
+  </div>
+
+  <!-- Celebration state -->
+  <div class="celebration">
+    <h1 class="celebration-headline">Hande Döndü!</h1>
+    <p class="subtitle" style="font-size: 1.2rem;">Sonunda! Beklemeye değdi. Hoş geldin.</p>
+    <div class="message-card">
+      <div class="heart-divider">♥</div>
+      <p>Artık buradasın ve her şey yerli yerine oturdu. Bir daha bu kadar uzun gitme, tamam mı?</p>
+      <div class="heart-divider">♥</div>
+    </div>
+  </div>
+
+  <div class="footer-note">seni çok özledim ♥</div>
+</div>
+
+<script>
+(function() {
+  // Target: 27 September 2026, 10:00 Turkey time (UTC+3)
+  const TARGET = new Date('2026-09-27T10:00:00+03:00').getTime();
+  // Departure date (when she left) - approximate: Sept 20
+  const DEPARTED = new Date('2026-09-20T00:00:00+03:00').getTime();
+
+  const $ = id => document.getElementById(id);
+
+  function pad(n) { return String(n).padStart(2, '0'); }
+
+  function updateCountdown() {
+    const now = Date.now();
+    const diff = TARGET - now;
+
+    if (diff <= 0) {
+      document.body.classList.add('arrived');
+      launchConfetti();
+      return;
+    }
+
+    const totalSec = Math.floor(diff / 1000);
+    const d = Math.floor(totalSec / 86400);
+    const h = Math.floor((totalSec % 86400) / 3600);
+    const m = Math.floor((totalSec % 3600) / 60);
+    const s = totalSec % 60;
+
+    $('days').textContent = pad(d);
+    $('hours').textContent = pad(h);
+    $('minutes').textContent = pad(m);
+    $('seconds').textContent = pad(s);
+
+    // Progress
+    const totalDuration = TARGET - DEPARTED;
+    const elapsed = now - DEPARTED;
+    const pct = Math.min(100, Math.max(0, (elapsed / totalDuration) * 100));
+    $('progressBar').style.width = pct.toFixed(1) + '%';
+    $('progressText').textContent = '%' + Math.floor(pct) + ' tamamlandı';
+
+    requestAnimationFrame(() => setTimeout(updateCountdown, 1000));
+  }
+
+  updateCountdown();
+
+  // Floating hearts
+  const heartsContainer = $('hearts');
+  const heartChars = ['♥', '♡', '❤', '💕'];
+
+  function spawnHeart() {
+    if (document.hidden) { setTimeout(spawnHeart, 4000); return; }
+    const el = document.createElement('span');
+    el.className = 'floating-heart';
+    el.textContent = heartChars[Math.floor(Math.random() * heartChars.length)];
+    el.style.left = (Math.random() * 100) + '%';
+    el.style.fontSize = (14 + Math.random() * 18) + 'px';
+    el.style.animationDuration = (8 + Math.random() * 12) + 's';
+    el.style.animationDelay = '0s';
+    heartsContainer.appendChild(el);
+    el.addEventListener('animationend', () => el.remove());
+    setTimeout(spawnHeart, 2500 + Math.random() * 4000);
+  }
+  spawnHeart();
+
+  // Confetti on arrival
+  function launchConfetti() {
+    const canvas = document.createElement('canvas');
+    canvas.className = 'confetti-canvas';
+    document.body.appendChild(canvas);
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const pieces = [];
+    const colors = ['#C2185B', '#F8BBD0', '#D4A574', '#E91E63', '#FFD700', '#FF6F61'];
+
+    for (let i = 0; i < 120; i++) {
+      pieces.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height - canvas.height,
+        w: 6 + Math.random() * 8,
+        h: 4 + Math.random() * 6,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        vy: 1.5 + Math.random() * 3,
+        vx: (Math.random() - 0.5) * 2,
+        rot: Math.random() * Math.PI * 2,
+        vr: (Math.random() - 0.5) * 0.1,
+        opacity: 1
+      });
+    }
+
+    let frame = 0;
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      let alive = false;
+      for (const p of pieces) {
+        p.y += p.vy;
+        p.x += p.vx;
+        p.rot += p.vr;
+        if (frame > 180) p.opacity = Math.max(0, p.opacity - 0.008);
+        if (p.opacity <= 0) continue;
+        alive = true;
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rot);
+        ctx.globalAlpha = p.opacity;
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+        ctx.restore();
+      }
+      frame++;
+      if (alive) requestAnimationFrame(draw);
+      else canvas.remove();
+    }
+    draw();
+  }
+})();
+</script>
