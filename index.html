@@ -1,67 +1,64 @@
 <title>Hande'yi Bekliyorum</title>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;600;700&display=swap">
 <style>
 :root {
-  --bg: #FBF7F4;
-  --bg-glass: rgba(255, 255, 255, 0.7);
-  --text: #2C1810;
-  --text-soft: #7A5C50;
-  --text-faint: #B39A8E;
-  --rose: #D4456A;
-  --rose-soft: rgba(212, 69, 106, 0.08);
-  --rose-glow: rgba(212, 69, 106, 0.15);
-  --warm: #C8956C;
-  --warm-soft: rgba(200, 149, 108, 0.12);
-  --surface: #FFFFFF;
-  --surface-border: rgba(44, 24, 16, 0.06);
-  --shadow-sm: 0 1px 3px rgba(44, 24, 16, 0.04);
-  --shadow-md: 0 4px 20px rgba(44, 24, 16, 0.06);
-  --shadow-lg: 0 8px 40px rgba(44, 24, 16, 0.08);
-  --heart-color: #D4456A;
-  --gradient-accent: linear-gradient(135deg, #D4456A, #C8956C);
+  --bg: #FFF8F0;
+  --bg-card: #FFFFFF;
+  --text: #2D1B14;
+  --text-muted: #8C6B5D;
+  --text-faint: #B89A8E;
+  --accent: #C2185B;
+  --accent-soft: #F8BBD0;
+  --accent-deep: #880E4F;
+  --gold: #D4A574;
+  --gold-glow: rgba(212, 165, 116, 0.3);
+  --heart-color: #E91E63;
+  --card-shadow: 0 6px 24px rgba(45, 27, 20, 0.07);
+  --card-border: rgba(200, 160, 130, 0.15);
+  --digit-bg: rgba(194, 24, 91, 0.05);
+  --digit-border: rgba(194, 24, 91, 0.1);
+  --gradient: linear-gradient(135deg, #C2185B, #D4A574);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #110D16;
-    --bg-glass: rgba(22, 16, 30, 0.8);
-    --text: #F2E8E4;
-    --text-soft: #B89A8E;
-    --text-faint: #6B5548;
-    --rose: #E8819A;
-    --rose-soft: rgba(232, 129, 154, 0.1);
-    --rose-glow: rgba(232, 129, 154, 0.15);
-    --warm: #D4A87C;
-    --warm-soft: rgba(212, 168, 124, 0.1);
-    --surface: #1C1524;
-    --surface-border: rgba(242, 232, 228, 0.06);
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
-    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.2);
-    --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.3);
-    --heart-color: #E8819A;
-    --gradient-accent: linear-gradient(135deg, #E8819A, #D4A87C);
+    --bg: #0F0A1A;
+    --bg-card: #1A1226;
+    --text: #F5E6E0;
+    --text-muted: #B89A8E;
+    --text-faint: #7A6058;
+    --accent: #F48FB1;
+    --accent-soft: #4A2040;
+    --accent-deep: #F8BBD0;
+    --gold: #E8C49A;
+    --gold-glow: rgba(232, 196, 154, 0.15);
+    --heart-color: #F48FB1;
+    --card-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+    --card-border: rgba(244, 143, 177, 0.1);
+    --digit-bg: rgba(244, 143, 177, 0.08);
+    --digit-border: rgba(244, 143, 177, 0.12);
+    --gradient: linear-gradient(135deg, #F48FB1, #E8C49A);
   }
 }
 
 :root[data-theme="dark"] {
-  --bg: #110D16;
-  --bg-glass: rgba(22, 16, 30, 0.8);
-  --text: #F2E8E4;
-  --text-soft: #B89A8E;
-  --text-faint: #6B5548;
-  --rose: #E8819A;
-  --rose-soft: rgba(232, 129, 154, 0.1);
-  --rose-glow: rgba(232, 129, 154, 0.15);
-  --warm: #D4A87C;
-  --warm-soft: rgba(212, 168, 124, 0.1);
-  --surface: #1C1524;
-  --surface-border: rgba(242, 232, 228, 0.06);
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.2);
-  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.3);
-  --heart-color: #E8819A;
-  --gradient-accent: linear-gradient(135deg, #E8819A, #D4A87C);
+  --bg: #0F0A1A;
+  --bg-card: #1A1226;
+  --text: #F5E6E0;
+  --text-muted: #B89A8E;
+  --text-faint: #7A6058;
+  --accent: #F48FB1;
+  --accent-soft: #4A2040;
+  --accent-deep: #F8BBD0;
+  --gold: #E8C49A;
+  --gold-glow: rgba(232, 196, 154, 0.15);
+  --heart-color: #F48FB1;
+  --card-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+  --card-border: rgba(244, 143, 177, 0.1);
+  --digit-bg: rgba(244, 143, 177, 0.08);
+  --digit-border: rgba(244, 143, 177, 0.12);
+  --gradient: linear-gradient(135deg, #F48FB1, #E8C49A);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -69,13 +66,14 @@
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Nunito', system-ui, sans-serif;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-inline: 20px;
-  padding-block: 2.5rem;
+  padding-inline: 16px;
+  padding-block: 2rem;
   overflow-x: hidden;
 }
 
@@ -97,7 +95,7 @@ body {
 
 @keyframes rise {
   0% { transform: translateY(0) scale(0.6) rotate(0deg); opacity: 0; }
-  8% { opacity: 0.12; }
+  8% { opacity: 0.13; }
   40% { opacity: 0.08; }
   100% { transform: translateY(-105vh) scale(1) rotate(30deg); opacity: 0; }
 }
@@ -106,130 +104,139 @@ body {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 460px;
+  max-width: 560px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 1.75rem;
+  text-align: center;
 }
 
-/* -- Header -- */
-.tag {
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
+/* Tag */
+.eyebrow {
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--warm);
-  background: var(--warm-soft);
-  padding: 0.35em 1em;
+  color: var(--gold);
+  background: var(--gold-glow);
+  padding: 0.4em 1.2em;
   border-radius: 100px;
 }
 
-.title {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(1.75rem, 5.5vw, 2.75rem);
+/* Title */
+.headline {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 6vw, 3.2rem);
   font-weight: 700;
   line-height: 1.2;
-  text-align: center;
   text-wrap: balance;
 }
 
-.title em {
-  color: var(--rose);
+.headline .name {
+  color: var(--accent);
   font-style: italic;
-  font-weight: 600;
 }
 
-.sub {
-  font-size: 0.9rem;
-  color: var(--text-soft);
-  text-align: center;
-  line-height: 1.5;
+.subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 420px;
 }
 
-/* -- Countdown -- */
-.timer {
+/* Countdown */
+.countdown-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.75rem;
+  gap: 0.85rem;
   width: 100%;
 }
 
-.cell {
-  background: var(--surface);
-  border: 1px solid var(--surface-border);
-  border-radius: 14px;
-  padding: 1rem 0.25rem 0.85rem;
+.countdown-unit {
+  background: var(--bg-card);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 1.1rem 0.4rem 0.9rem;
+  box-shadow: var(--card-shadow);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.35rem;
-  box-shadow: var(--shadow-md);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  gap: 0.4rem;
+  transition: transform 0.3s ease;
 }
 
-.cell:hover {
+.countdown-unit:hover {
   transform: translateY(-3px);
-  box-shadow: var(--shadow-lg);
 }
 
-.num {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(2rem, 7vw, 2.8rem);
+.digit {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 7.5vw, 3rem);
   font-weight: 700;
-  line-height: 1;
-  color: var(--rose);
+  color: var(--accent);
+  background: var(--digit-bg);
+  border: 1px solid var(--digit-border);
+  border-radius: 10px;
+  padding: 0.1em 0.3em;
+  min-width: 2ch;
   font-variant-numeric: tabular-nums;
+  line-height: 1.2;
 }
 
-.lbl {
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+.unit-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--text-faint);
+  color: var(--text-muted);
 }
 
-/* -- Progress -- */
-.prog {
+/* Progress */
+.progress-section {
   width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 1.1rem 1.25rem;
+  box-shadow: var(--card-shadow);
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.6rem;
 }
 
-.prog-row {
+.progress-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.prog-label {
-  font-size: 0.7rem;
-  font-weight: 500;
-  color: var(--text-faint);
-  letter-spacing: 0.04em;
+.progress-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
 }
 
-.prog-pct {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 0.85rem;
+.progress-pct {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 0.9rem;
   font-weight: 700;
-  color: var(--rose);
+  color: var(--accent);
 }
 
 .track {
   width: 100%;
-  height: 6px;
-  background: var(--rose-soft);
+  height: 7px;
+  background: var(--digit-bg);
   border-radius: 100px;
+  border: 1px solid var(--digit-border);
   overflow: visible;
   position: relative;
 }
 
 .fill {
   height: 100%;
-  background: var(--gradient-accent);
+  background: var(--gradient);
   border-radius: 100px;
   transition: width 1s ease;
   position: relative;
@@ -238,103 +245,112 @@ body {
 .fill::after {
   content: '';
   position: absolute;
-  right: -5px;
+  right: -6px;
   top: 50%;
   transform: translateY(-50%);
-  width: 10px;
-  height: 10px;
-  background: var(--warm);
+  width: 12px;
+  height: 12px;
+  background: var(--gold);
   border-radius: 50%;
-  border: 2px solid var(--surface);
-  box-shadow: 0 0 10px var(--rose-glow);
+  border: 2px solid var(--bg-card);
+  box-shadow: 0 0 8px var(--gold-glow);
 }
 
-/* -- Flight pill -- */
-.flight {
+.progress-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  color: var(--text-faint);
+  font-weight: 600;
+}
+
+/* Flight */
+.flight-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.8rem;
-  color: var(--text-soft);
-  background: var(--surface);
-  border: 1px solid var(--surface-border);
+  gap: 0.6rem;
+  background: var(--bg-card);
+  border: 1px solid var(--card-border);
   border-radius: 100px;
-  padding: 0.5rem 1.1rem;
-  box-shadow: var(--shadow-sm);
+  padding: 0.6rem 1.3rem;
+  box-shadow: var(--card-shadow);
+  font-size: 0.85rem;
+  color: var(--text-muted);
 }
 
 .plane {
   display: inline-block;
-  animation: bob 2.5s ease-in-out infinite;
+  animation: fly 3s ease-in-out infinite;
 }
 
-@keyframes bob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-2px); }
+@keyframes fly {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  50% { transform: translateX(5px) rotate(-4deg); }
 }
 
-/* -- Rotating messages -- */
-.msg-area {
+/* Message card with rotation */
+.msg-card {
+  background: var(--bg-card);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: var(--card-shadow);
   width: 100%;
-  min-height: 80px;
+  min-height: 90px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
   position: relative;
+  overflow: hidden;
 }
 
-.msg-bubble {
-  background: var(--surface);
-  border: 1px solid var(--surface-border);
-  border-radius: 16px;
-  padding: 1.25rem 1.5rem;
-  box-shadow: var(--shadow-md);
-  width: 100%;
-  text-align: center;
-  position: relative;
-  animation: fadeMsg 6s ease-in-out infinite;
-}
-
-@keyframes fadeMsg {
-  0%, 100% { opacity: 0; transform: translateY(6px); }
-  12%, 88% { opacity: 1; transform: translateY(0); }
-}
-
-.msg-bubble .heart-icon {
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--gradient-accent);
-  color: #fff;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.65rem;
-  box-shadow: var(--shadow-sm);
+.msg-heart {
+  color: var(--accent);
+  font-size: 1.1rem;
 }
 
 .msg-text {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: 'Playfair Display', Georgia, serif;
   font-style: italic;
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 1.05rem;
+  line-height: 1.65;
   color: var(--text);
-  font-weight: 500;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* -- Footer -- */
-.foot {
-  font-size: 0.7rem;
-  color: var(--text-faint);
-  text-align: center;
-  padding-top: 0.5rem;
+.msg-text.fade-out {
+  opacity: 0;
+  transform: translateY(-8px);
 }
 
-/* -- Celebration -- */
+.msg-text.fade-in {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+/* Dots indicator */
+.msg-dots {
+  display: flex;
+  gap: 5px;
+  margin-top: 0.25rem;
+}
+
+.msg-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--digit-border);
+  transition: background 0.3s, transform 0.3s;
+}
+
+.msg-dot.active {
+  background: var(--accent);
+  transform: scale(1.3);
+}
+
+/* Celebration */
 .celeb { display: none; }
 
 body.arrived .wait { display: none; }
@@ -346,18 +362,17 @@ body.arrived .celeb {
 }
 
 .celeb-title {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(2.2rem, 7vw, 3.5rem);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.5rem, 8vw, 4rem);
   font-weight: 700;
-  color: var(--rose);
+  color: var(--accent);
   text-wrap: balance;
-  text-align: center;
-  animation: pop 0.6s ease-out;
+  animation: pop 0.7s ease-out;
 }
 
 @keyframes pop {
-  0% { transform: scale(0.85); opacity: 0; }
-  70% { transform: scale(1.04); }
+  0% { transform: scale(0.8); opacity: 0; }
+  65% { transform: scale(1.05); }
   100% { transform: scale(1); opacity: 1; }
 }
 
@@ -368,15 +383,22 @@ body.arrived .celeb {
   z-index: 10;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .fh, .plane, .celeb-title { animation: none !important; }
-  .cell:hover { transform: none; }
-  .msg-bubble { animation: none !important; opacity: 1; transform: none; }
+.foot {
+  font-size: 0.7rem;
+  color: var(--text-faint);
+  margin-top: 0.5rem;
 }
 
-@media (max-width: 380px) {
-  .timer { gap: 0.5rem; }
-  .cell { padding: 0.75rem 0.2rem 0.65rem; border-radius: 10px; }
+@media (max-width: 420px) {
+  .countdown-grid { gap: 0.55rem; }
+  .countdown-unit { padding: 0.85rem 0.3rem 0.7rem; border-radius: 12px; }
+  .msg-card { padding: 1.25rem 1.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fh, .plane, .celeb-title { animation: none !important; }
+  .countdown-unit:hover { transform: none; }
+  .msg-text { transition: none !important; }
 }
 </style>
 
@@ -384,61 +406,61 @@ body.arrived .celeb {
 
 <div class="page">
   <div class="wait">
-    <div style="display:flex;flex-direction:column;align-items:center;gap:0.6rem;margin-bottom:0.5rem">
-      <span class="tag">Geri Sayım</span>
-      <h1 class="title"><em>Hande</em> Sefa'sına dönüyor</h1>
-      <p class="sub">Her saniye seni biraz daha yaklaştırıyor</p>
+    <div class="eyebrow">Geri Sayım Başladı</div>
+    <h1 class="headline"><span class="name">Hande</span> Sefa'sına dönüyor</h1>
+    <p class="subtitle">Her saniye seni biraz daha yaklaştırıyor. Sabırsızlıkla bekliyorum.</p>
+
+    <div class="countdown-grid">
+      <div class="countdown-unit">
+        <span class="digit" id="d">--</span>
+        <span class="unit-label">Gün</span>
+      </div>
+      <div class="countdown-unit">
+        <span class="digit" id="h">--</span>
+        <span class="unit-label">Saat</span>
+      </div>
+      <div class="countdown-unit">
+        <span class="digit" id="m">--</span>
+        <span class="unit-label">Dakika</span>
+      </div>
+      <div class="countdown-unit">
+        <span class="digit" id="s">--</span>
+        <span class="unit-label">Saniye</span>
+      </div>
     </div>
 
-    <div class="timer">
-      <div class="cell">
-        <span class="num" id="d">--</span>
-        <span class="lbl">Gün</span>
-      </div>
-      <div class="cell">
-        <span class="num" id="h">--</span>
-        <span class="lbl">Saat</span>
-      </div>
-      <div class="cell">
-        <span class="num" id="m">--</span>
-        <span class="lbl">Dakika</span>
-      </div>
-      <div class="cell">
-        <span class="num" id="s">--</span>
-        <span class="lbl">Saniye</span>
-      </div>
-    </div>
-
-    <div class="prog">
-      <div class="prog-row">
-        <span class="prog-label">19 Eylül — gidiş</span>
-        <span class="prog-pct" id="pct">%0</span>
+    <div class="progress-section">
+      <div class="progress-top">
+        <span class="progress-label">Kavuşmaya ne kadar kaldı?</span>
+        <span class="progress-pct" id="pct">%0</span>
       </div>
       <div class="track">
         <div class="fill" id="bar" style="width:0%"></div>
       </div>
-      <div class="prog-row">
-        <span class="prog-label"></span>
-        <span class="prog-label">27 Eylül — dönüş</span>
+      <div class="progress-bottom">
+        <span>19 Eylül — gidiş ✈</span>
+        <span>27 Eylül — dönüş ♥</span>
       </div>
     </div>
 
-    <div class="flight">
+    <div class="flight-pill">
       <span class="plane">✈</span>
-      <span>27 Eylül, Pazar — 10:00</span>
+      <span>27 Eylül, Pazar — Saat 10:00</span>
     </div>
 
-    <div class="msg-area" id="msgArea"></div>
+    <div class="msg-card">
+      <span class="msg-heart">♥</span>
+      <p class="msg-text" id="msgText"></p>
+      <div class="msg-dots" id="msgDots"></div>
+    </div>
   </div>
 
   <div class="celeb">
     <h1 class="celeb-title">Hande Döndü!</h1>
-    <p class="sub" style="font-size:1.1rem">Sonunda. Beklemeye değdi.</p>
-    <div class="msg-area">
-      <div class="msg-bubble" style="animation:none;opacity:1;transform:none">
-        <span class="heart-icon">♥</span>
-        <p class="msg-text">Bir daha bu kadar uzun gitme, tamam mı?</p>
-      </div>
+    <p class="subtitle" style="font-size:1.15rem">Sonunda! Beklemeye değdi. Hoş geldin.</p>
+    <div class="msg-card">
+      <span class="msg-heart">♥</span>
+      <p class="msg-text" style="opacity:1;transform:none">Artık buradasın ve her şey yerli yerine oturdu. Bir daha bu kadar uzun gitme, tamam mı?</p>
     </div>
   </div>
 
@@ -451,21 +473,21 @@ body.arrived .celeb {
   var LEFT   = new Date('2026-09-19T08:00:00+03:00').getTime();
 
   var messages = [
-    "Sensiz geçen her dakika sonsuz gibi...",
+    "Sensiz geçen her dakika sonsuz gibi…",
     "Çabuk dön, burada her şey seni bekliyor",
-    "Saat başı pencereden bakıyorum sanki geleceksin diye",
+    "Saat başı pencereden bakıyorum, sanki geleceksin diye",
     "Aklım hep sende, bunu biliyorsun değil mi?",
-    "Dönünce seni bırakmayacağım haberin olsun",
+    "Dönünce seni bırakmayacağım, haberin olsun",
     "Evde bile olsam sensiz bir yerlerdeyim sanki",
     "Seninle geçen bir dakika, sensiz geçen bir günden güzel",
-    "Son gün, son saat, son dakika... hepsi senin için",
     "Kapı her çalındığında sen misin diye bakıyorum",
     "Bu geri sayım bitse de kollarıma dönsen",
     "Seni beklemek bile güzel, ama dönmen daha güzel olacak",
-    "Hande'siz ev, ev değil",
+    "Hande’siz ev, ev değil",
     "Döndüğünde ilk sarılma hakkı benim",
-    "Bu site kadar sabırsızım sana kavuşmak için",
-    "Yastığın bile seni özledi, ben söylemiyorum"
+    "Yastığın bile seni özledi, ben söylemiyorum",
+    "Sensiz geçen saatler, seninle geçeceklerin kıymetini hatırlatıyor",
+    "Bir gün bitecek bu özlem, o gün çok yakın"
   ];
 
   var $ = function(id) { return document.getElementById(id); };
@@ -497,23 +519,49 @@ body.arrived .celeb {
   tick();
 
   // Rotating messages
-  var area = $('msgArea');
+  var msgEl = $('msgText');
+  var dotsEl = $('msgDots');
   var idx = Math.floor(Math.random() * messages.length);
+  var dotCount = 5;
 
-  function showMsg() {
-    var bubble = document.createElement('div');
-    bubble.className = 'msg-bubble';
-    bubble.innerHTML = '<span class="heart-icon">♥</span><p class="msg-text">' + messages[idx] + '</p>';
-    area.innerHTML = '';
-    area.appendChild(bubble);
-    idx = (idx + 1) % messages.length;
-    setTimeout(showMsg, 6000);
+  // Build dots
+  for (var i = 0; i < dotCount; i++) {
+    var dot = document.createElement('span');
+    dot.className = 'msg-dot';
+    dotsEl.appendChild(dot);
   }
-  showMsg();
+  var dots = dotsEl.querySelectorAll('.msg-dot');
+  var cycle = 0;
+
+  function showMessage() {
+    // Fade out
+    msgEl.classList.add('fade-out');
+    setTimeout(function() {
+      msgEl.textContent = messages[idx];
+      msgEl.classList.remove('fade-out');
+      msgEl.classList.add('fade-in');
+      // Update dots
+      for (var j = 0; j < dots.length; j++) {
+        dots[j].classList.toggle('active', j === cycle % dotCount);
+      }
+      cycle++;
+      idx = (idx + 1) % messages.length;
+      requestAnimationFrame(function() {
+        setTimeout(function() { msgEl.classList.remove('fade-in'); }, 30);
+      });
+    }, 500);
+    setTimeout(showMessage, 5000);
+  }
+  // First message immediately
+  msgEl.textContent = messages[idx];
+  dots[0].classList.add('active');
+  cycle = 1;
+  idx = (idx + 1) % messages.length;
+  setTimeout(showMessage, 5000);
 
   // Hearts
   var hbg = $('hbg');
-  var hc = ['♥','♡'];
+  var hc = ['♥', '♡'];
   function heart() {
     if (document.hidden) { setTimeout(heart, 5000); return; }
     var e = document.createElement('span');
@@ -535,7 +583,7 @@ body.arrived .celeb {
     document.body.appendChild(c);
     var ctx = c.getContext('2d');
     c.width = innerWidth; c.height = innerHeight;
-    var ps = [], cols = ['#D4456A','#C8956C','#E8819A','#F8BBD0','#FFD700'];
+    var ps = [], cols = ['#C2185B','#F8BBD0','#D4A574','#E91E63','#FFD700'];
     for (var i = 0; i < 100; i++) {
       ps.push({
         x: Math.random()*c.width, y: Math.random()*c.height - c.height,
