@@ -1,58 +1,67 @@
 <title>Hande'yi Bekliyorum</title>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap">
 <style>
 :root {
-  --bg: #FFF8F0;
-  --bg-card: #FFFFFF;
-  --text: #2D1B14;
-  --text-muted: #8C6B5D;
-  --accent: #C2185B;
-  --accent-soft: #F8BBD0;
-  --accent-deep: #880E4F;
-  --gold: #D4A574;
-  --gold-glow: rgba(212, 165, 116, 0.3);
-  --heart-color: #E91E63;
-  --card-shadow: 0 8px 32px rgba(45, 27, 20, 0.08);
-  --card-border: rgba(200, 160, 130, 0.15);
-  --digit-bg: rgba(194, 24, 91, 0.06);
-  --digit-border: rgba(194, 24, 91, 0.12);
+  --bg: #FBF7F4;
+  --bg-glass: rgba(255, 255, 255, 0.7);
+  --text: #2C1810;
+  --text-soft: #7A5C50;
+  --text-faint: #B39A8E;
+  --rose: #D4456A;
+  --rose-soft: rgba(212, 69, 106, 0.08);
+  --rose-glow: rgba(212, 69, 106, 0.15);
+  --warm: #C8956C;
+  --warm-soft: rgba(200, 149, 108, 0.12);
+  --surface: #FFFFFF;
+  --surface-border: rgba(44, 24, 16, 0.06);
+  --shadow-sm: 0 1px 3px rgba(44, 24, 16, 0.04);
+  --shadow-md: 0 4px 20px rgba(44, 24, 16, 0.06);
+  --shadow-lg: 0 8px 40px rgba(44, 24, 16, 0.08);
+  --heart-color: #D4456A;
+  --gradient-accent: linear-gradient(135deg, #D4456A, #C8956C);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #0F0A1A;
-    --bg-card: #1A1226;
-    --text: #F5E6E0;
-    --text-muted: #B89A8E;
-    --accent: #F48FB1;
-    --accent-soft: #4A2040;
-    --accent-deep: #F8BBD0;
-    --gold: #E8C49A;
-    --gold-glow: rgba(232, 196, 154, 0.15);
-    --heart-color: #F48FB1;
-    --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    --card-border: rgba(244, 143, 177, 0.12);
-    --digit-bg: rgba(244, 143, 177, 0.08);
-    --digit-border: rgba(244, 143, 177, 0.15);
+    --bg: #110D16;
+    --bg-glass: rgba(22, 16, 30, 0.8);
+    --text: #F2E8E4;
+    --text-soft: #B89A8E;
+    --text-faint: #6B5548;
+    --rose: #E8819A;
+    --rose-soft: rgba(232, 129, 154, 0.1);
+    --rose-glow: rgba(232, 129, 154, 0.15);
+    --warm: #D4A87C;
+    --warm-soft: rgba(212, 168, 124, 0.1);
+    --surface: #1C1524;
+    --surface-border: rgba(242, 232, 228, 0.06);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.3);
+    --heart-color: #E8819A;
+    --gradient-accent: linear-gradient(135deg, #E8819A, #D4A87C);
   }
 }
 
 :root[data-theme="dark"] {
-  --bg: #0F0A1A;
-  --bg-card: #1A1226;
-  --text: #F5E6E0;
-  --text-muted: #B89A8E;
-  --accent: #F48FB1;
-  --accent-soft: #4A2040;
-  --accent-deep: #F8BBD0;
-  --gold: #E8C49A;
-  --gold-glow: rgba(232, 196, 154, 0.15);
-  --heart-color: #F48FB1;
-  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  --card-border: rgba(244, 143, 177, 0.12);
-  --digit-bg: rgba(244, 143, 177, 0.08);
-  --digit-border: rgba(244, 143, 177, 0.15);
+  --bg: #110D16;
+  --bg-glass: rgba(22, 16, 30, 0.8);
+  --text: #F2E8E4;
+  --text-soft: #B89A8E;
+  --text-faint: #6B5548;
+  --rose: #E8819A;
+  --rose-soft: rgba(232, 129, 154, 0.1);
+  --rose-glow: rgba(232, 129, 154, 0.15);
+  --warm: #D4A87C;
+  --warm-soft: rgba(212, 168, 124, 0.1);
+  --surface: #1C1524;
+  --surface-border: rgba(242, 232, 228, 0.06);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.3);
+  --heart-color: #E8819A;
+  --gradient-accent: linear-gradient(135deg, #E8819A, #D4A87C);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -60,19 +69,17 @@
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Nunito', system-ui, sans-serif;
+  font-family: 'DM Sans', system-ui, sans-serif;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-inline: 16px;
-  padding-block: 2rem;
+  padding-inline: 20px;
+  padding-block: 2.5rem;
   overflow-x: hidden;
-  position: relative;
 }
 
-.hearts-container {
+.hearts-bg {
   position: fixed;
   inset: 0;
   pointer-events: none;
@@ -80,238 +87,277 @@ body {
   z-index: 0;
 }
 
-.floating-heart {
+.fh {
   position: absolute;
-  bottom: -40px;
+  bottom: -30px;
   opacity: 0;
-  animation: floatUp linear forwards;
+  animation: rise linear forwards;
   color: var(--heart-color);
-  filter: blur(0.5px);
 }
 
-@keyframes floatUp {
-  0% { transform: translateY(0) rotate(0deg) scale(0.5); opacity: 0; }
-  10% { opacity: 0.15; }
-  50% { opacity: 0.1; }
-  100% { transform: translateY(-110vh) rotate(45deg) scale(1.2); opacity: 0; }
+@keyframes rise {
+  0% { transform: translateY(0) scale(0.6) rotate(0deg); opacity: 0; }
+  8% { opacity: 0.12; }
+  40% { opacity: 0.08; }
+  100% { transform: translateY(-105vh) scale(1) rotate(30deg); opacity: 0; }
 }
 
-.main-content {
+.page {
   position: relative;
   z-index: 1;
+  width: 100%;
+  max-width: 460px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.5rem;
-  max-width: 640px;
-  width: 100%;
-  text-align: center;
+  gap: 2rem;
 }
 
-.eyebrow {
-  font-family: 'Nunito', sans-serif;
-  font-weight: 700;
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
+/* -- Header -- */
+.tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold);
-  background: var(--gold-glow);
-  padding: 0.4em 1.2em;
+  color: var(--warm);
+  background: var(--warm-soft);
+  padding: 0.35em 1em;
   border-radius: 100px;
 }
 
-.headline {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(2rem, 6vw, 3.5rem);
+.title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.75rem, 5.5vw, 2.75rem);
   font-weight: 700;
-  line-height: 1.15;
-  color: var(--text);
+  line-height: 1.2;
+  text-align: center;
   text-wrap: balance;
 }
 
-.headline .name {
-  color: var(--accent);
+.title em {
+  color: var(--rose);
   font-style: italic;
-}
-
-.subtitle {
-  font-size: 1.05rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-  max-width: 460px;
-}
-
-.countdown-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  width: 100%;
-  max-width: 520px;
-}
-
-@media (max-width: 440px) {
-  .countdown-grid { gap: 0.6rem; }
-}
-
-.countdown-unit {
-  background: var(--bg-card);
-  border: 1px solid var(--card-border);
-  border-radius: 16px;
-  padding: 1.25rem 0.5rem;
-  box-shadow: var(--card-shadow);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  transition: transform 0.3s ease;
-}
-
-.countdown-unit:hover {
-  transform: translateY(-4px);
-}
-
-.digit-box {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(2rem, 8vw, 3.5rem);
-  font-weight: 700;
-  color: var(--accent);
-  background: var(--digit-bg);
-  border: 1px solid var(--digit-border);
-  border-radius: 10px;
-  padding: 0.15em 0.35em;
-  min-width: 2.2ch;
-  font-variant-numeric: tabular-nums;
-  line-height: 1.2;
-  transition: color 0.3s;
-}
-
-.unit-label {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-
-.flight-info {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  background: var(--bg-card);
-  border: 1px solid var(--card-border);
-  border-radius: 100px;
-  padding: 0.75rem 1.5rem;
-  box-shadow: var(--card-shadow);
-  font-size: 0.9rem;
-  color: var(--text-muted);
-}
-
-.flight-info .plane-icon {
-  font-size: 1.2rem;
-  animation: flyPlane 3s ease-in-out infinite;
-}
-
-@keyframes flyPlane {
-  0%, 100% { transform: translateX(0) rotate(0deg); }
-  50% { transform: translateX(6px) rotate(-5deg); }
-}
-
-.message-card {
-  background: var(--bg-card);
-  border: 1px solid var(--card-border);
-  border-radius: 20px;
-  padding: 2rem;
-  box-shadow: var(--card-shadow);
-  width: 100%;
-}
-
-.message-card p {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-style: italic;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: var(--text);
-}
-
-.message-card .heart-divider {
-  color: var(--accent);
-  font-size: 1.5rem;
-  margin-block: 0.75rem;
-}
-
-.progress-section {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.progress-labels {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.8rem;
-  color: var(--text-muted);
   font-weight: 600;
 }
 
-.progress-bar-track {
-  width: 100%;
-  height: 8px;
-  background: var(--digit-bg);
-  border-radius: 100px;
-  overflow: hidden;
-  border: 1px solid var(--digit-border);
+.sub {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  text-align: center;
+  line-height: 1.5;
 }
 
-.progress-bar-fill {
+/* -- Countdown -- */
+.timer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.cell {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: 14px;
+  padding: 1rem 0.25rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cell:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.num {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2rem, 7vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--rose);
+  font-variant-numeric: tabular-nums;
+}
+
+.lbl {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* -- Progress -- */
+.prog {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.prog-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prog-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-faint);
+  letter-spacing: 0.04em;
+}
+
+.prog-pct {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--rose);
+}
+
+.track {
+  width: 100%;
+  height: 6px;
+  background: var(--rose-soft);
+  border-radius: 100px;
+  overflow: visible;
+  position: relative;
+}
+
+.fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--accent), var(--gold));
+  background: var(--gradient-accent);
   border-radius: 100px;
   transition: width 1s ease;
   position: relative;
 }
 
-.progress-bar-fill::after {
+.fill::after {
   content: '';
   position: absolute;
-  right: 0;
+  right: -5px;
   top: 50%;
   transform: translateY(-50%);
-  width: 14px;
-  height: 14px;
-  background: var(--gold);
+  width: 10px;
+  height: 10px;
+  background: var(--warm);
   border-radius: 50%;
-  border: 2px solid var(--bg-card);
-  box-shadow: 0 0 8px var(--gold-glow);
+  border: 2px solid var(--surface);
+  box-shadow: 0 0 10px var(--rose-glow);
 }
 
-.progress-percent {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 0.95rem;
-  color: var(--accent);
-  font-weight: 700;
+/* -- Flight pill -- */
+.flight {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-soft);
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: 100px;
+  padding: 0.5rem 1.1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.plane {
+  display: inline-block;
+  animation: bob 2.5s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+/* -- Rotating messages -- */
+.msg-area {
+  width: 100%;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.msg-bubble {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-md);
+  width: 100%;
   text-align: center;
+  position: relative;
+  animation: fadeMsg 6s ease-in-out infinite;
 }
 
-/* Celebration state */
-.celebration { display: none; }
+@keyframes fadeMsg {
+  0%, 100% { opacity: 0; transform: translateY(6px); }
+  12%, 88% { opacity: 1; transform: translateY(0); }
+}
 
-body.arrived .waiting { display: none; }
-body.arrived .celebration { display: flex; flex-direction: column; align-items: center; gap: 2rem; }
+.msg-bubble .heart-icon {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gradient-accent);
+  color: #fff;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  box-shadow: var(--shadow-sm);
+}
 
-.celebration-headline {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(2.5rem, 8vw, 4.5rem);
+.msg-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* -- Footer -- */
+.foot {
+  font-size: 0.7rem;
+  color: var(--text-faint);
+  text-align: center;
+  padding-top: 0.5rem;
+}
+
+/* -- Celebration -- */
+.celeb { display: none; }
+
+body.arrived .wait { display: none; }
+body.arrived .celeb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.celeb-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.2rem, 7vw, 3.5rem);
   font-weight: 700;
-  line-height: 1.1;
-  color: var(--accent);
+  color: var(--rose);
   text-wrap: balance;
-  animation: pulseIn 0.8s ease-out;
+  text-align: center;
+  animation: pop 0.6s ease-out;
 }
 
-@keyframes pulseIn {
-  0% { transform: scale(0.8); opacity: 0; }
-  60% { transform: scale(1.05); }
+@keyframes pop {
+  0% { transform: scale(0.85); opacity: 0; }
+  70% { transform: scale(1.04); }
   100% { transform: scale(1); opacity: 1; }
 }
 
@@ -322,198 +368,199 @@ body.arrived .celebration { display: flex; flex-direction: column; align-items: 
   z-index: 10;
 }
 
-.footer-note {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  opacity: 0.6;
-  margin-top: 1rem;
+@media (prefers-reduced-motion: reduce) {
+  .fh, .plane, .celeb-title { animation: none !important; }
+  .cell:hover { transform: none; }
+  .msg-bubble { animation: none !important; opacity: 1; transform: none; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .floating-heart, .plane-icon, .celebration-headline {
-    animation: none !important;
-  }
-  .countdown-unit:hover { transform: none; }
+@media (max-width: 380px) {
+  .timer { gap: 0.5rem; }
+  .cell { padding: 0.75rem 0.2rem 0.65rem; border-radius: 10px; }
 }
 </style>
 
-<div class="hearts-container" id="hearts"></div>
+<div class="hearts-bg" id="hbg"></div>
 
-<div class="main-content">
-  <!-- Waiting state -->
-  <div class="waiting">
-    <div class="eyebrow">Geri Sayım Başladı</div>
-    <h1 class="headline"><span class="name">Hande</span> Sefa'sına dönüyor</h1>
-    <p class="subtitle">Her saniye seni biraz daha yaklaştırıyor. Sabırsızlıkla bekliyorum.</p>
+<div class="page">
+  <div class="wait">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:0.6rem;margin-bottom:0.5rem">
+      <span class="tag">Geri Sayım</span>
+      <h1 class="title"><em>Hande</em> Sefa'sına dönüyor</h1>
+      <p class="sub">Her saniye seni biraz daha yaklaştırıyor</p>
+    </div>
 
-    <div class="countdown-grid">
-      <div class="countdown-unit">
-        <div class="digit-box" id="days">--</div>
-        <span class="unit-label">Gün</span>
+    <div class="timer">
+      <div class="cell">
+        <span class="num" id="d">--</span>
+        <span class="lbl">Gün</span>
       </div>
-      <div class="countdown-unit">
-        <div class="digit-box" id="hours">--</div>
-        <span class="unit-label">Saat</span>
+      <div class="cell">
+        <span class="num" id="h">--</span>
+        <span class="lbl">Saat</span>
       </div>
-      <div class="countdown-unit">
-        <div class="digit-box" id="minutes">--</div>
-        <span class="unit-label">Dakika</span>
+      <div class="cell">
+        <span class="num" id="m">--</span>
+        <span class="lbl">Dakika</span>
       </div>
-      <div class="countdown-unit">
-        <div class="digit-box" id="seconds">--</div>
-        <span class="unit-label">Saniye</span>
+      <div class="cell">
+        <span class="num" id="s">--</span>
+        <span class="lbl">Saniye</span>
       </div>
     </div>
 
-    <div class="progress-section">
-      <div class="progress-labels">
-        <span>Gitti</span>
-        <span>Dönüyor</span>
+    <div class="prog">
+      <div class="prog-row">
+        <span class="prog-label">19 Eylül — gidiş</span>
+        <span class="prog-pct" id="pct">%0</span>
       </div>
-      <div class="progress-bar-track">
-        <div class="progress-bar-fill" id="progressBar" style="width: 0%"></div>
+      <div class="track">
+        <div class="fill" id="bar" style="width:0%"></div>
       </div>
-      <div class="progress-percent" id="progressText">%0 tamamlandı</div>
+      <div class="prog-row">
+        <span class="prog-label"></span>
+        <span class="prog-label">27 Eylül — dönüş</span>
+      </div>
     </div>
 
-    <div class="flight-info">
-      <span class="plane-icon">✈</span>
-      <span>27 Eylül, Pazar — Saat 10:00</span>
+    <div class="flight">
+      <span class="plane">✈</span>
+      <span>27 Eylül, Pazar — 10:00</span>
     </div>
 
-    <div class="message-card">
-      <div class="heart-divider">♥</div>
-      <p>Sensiz geçen her dakika, seninle geçecek saatlerin ne kadar kıymetli olduğunu hatırlatıyor. Çabuk dön, burada her şey seni bekliyor.</p>
-      <div class="heart-divider">♥</div>
+    <div class="msg-area" id="msgArea"></div>
+  </div>
+
+  <div class="celeb">
+    <h1 class="celeb-title">Hande Döndü!</h1>
+    <p class="sub" style="font-size:1.1rem">Sonunda. Beklemeye değdi.</p>
+    <div class="msg-area">
+      <div class="msg-bubble" style="animation:none;opacity:1;transform:none">
+        <span class="heart-icon">♥</span>
+        <p class="msg-text">Bir daha bu kadar uzun gitme, tamam mı?</p>
+      </div>
     </div>
   </div>
 
-  <!-- Celebration state -->
-  <div class="celebration">
-    <h1 class="celebration-headline">Hande Döndü!</h1>
-    <p class="subtitle" style="font-size: 1.2rem;">Sonunda! Beklemeye değdi. Hoş geldin.</p>
-    <div class="message-card">
-      <div class="heart-divider">♥</div>
-      <p>Artık buradasın ve her şey yerli yerine oturdu. Bir daha bu kadar uzun gitme, tamam mı?</p>
-      <div class="heart-divider">♥</div>
-    </div>
-  </div>
-
-  <div class="footer-note">seni çok özledim ♥</div>
+  <p class="foot">seni çok özledim ♥</p>
 </div>
 
 <script>
 (function() {
-  // Target: 27 September 2026, 10:00 Turkey time (UTC+3)
-  const TARGET = new Date('2026-09-27T10:00:00+03:00').getTime();
-  // Departure date (when she left) - approximate: Sept 20
-  const DEPARTED = new Date('2026-09-19T08:00:00+03:00').getTime();
+  var TARGET = new Date('2026-09-27T10:00:00+03:00').getTime();
+  var LEFT   = new Date('2026-09-19T08:00:00+03:00').getTime();
 
-  const $ = id => document.getElementById(id);
+  var messages = [
+    "Sensiz geçen her dakika sonsuz gibi...",
+    "Çabuk dön, burada her şey seni bekliyor",
+    "Saat başı pencereden bakıyorum sanki geleceksin diye",
+    "Aklım hep sende, bunu biliyorsun değil mi?",
+    "Dönünce seni bırakmayacağım haberin olsun",
+    "Evde bile olsam sensiz bir yerlerdeyim sanki",
+    "Seninle geçen bir dakika, sensiz geçen bir günden güzel",
+    "Son gün, son saat, son dakika... hepsi senin için",
+    "Kapı her çalındığında sen misin diye bakıyorum",
+    "Bu geri sayım bitse de kollarıma dönsen",
+    "Seni beklemek bile güzel, ama dönmen daha güzel olacak",
+    "Hande'siz ev, ev değil",
+    "Döndüğünde ilk sarılma hakkı benim",
+    "Bu site kadar sabırsızım sana kavuşmak için",
+    "Yastığın bile seni özledi, ben söylemiyorum"
+  ];
 
-  function pad(n) { return String(n).padStart(2, '0'); }
+  var $ = function(id) { return document.getElementById(id); };
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
 
-  function updateCountdown() {
-    const now = Date.now();
-    const diff = TARGET - now;
-
+  // Countdown
+  function tick() {
+    var now = Date.now();
+    var diff = TARGET - now;
     if (diff <= 0) {
       document.body.classList.add('arrived');
-      launchConfetti();
+      confetti();
       return;
     }
+    var ts = Math.floor(diff / 1000);
+    $('d').textContent = pad(Math.floor(ts / 86400));
+    $('h').textContent = pad(Math.floor((ts % 86400) / 3600));
+    $('m').textContent = pad(Math.floor((ts % 3600) / 60));
+    $('s').textContent = pad(ts % 60);
 
-    const totalSec = Math.floor(diff / 1000);
-    const d = Math.floor(totalSec / 86400);
-    const h = Math.floor((totalSec % 86400) / 3600);
-    const m = Math.floor((totalSec % 3600) / 60);
-    const s = totalSec % 60;
+    var total = TARGET - LEFT;
+    var elapsed = now - LEFT;
+    var p = Math.min(100, Math.max(0, (elapsed / total) * 100));
+    $('bar').style.width = p.toFixed(1) + '%';
+    $('pct').textContent = '%' + Math.floor(p);
 
-    $('days').textContent = pad(d);
-    $('hours').textContent = pad(h);
-    $('minutes').textContent = pad(m);
-    $('seconds').textContent = pad(s);
-
-    // Progress
-    const totalDuration = TARGET - DEPARTED;
-    const elapsed = now - DEPARTED;
-    const pct = Math.min(100, Math.max(0, (elapsed / totalDuration) * 100));
-    $('progressBar').style.width = pct.toFixed(1) + '%';
-    $('progressText').textContent = '%' + Math.floor(pct) + ' tamamlandı';
-
-    requestAnimationFrame(() => setTimeout(updateCountdown, 1000));
+    setTimeout(tick, 1000);
   }
+  tick();
 
-  updateCountdown();
+  // Rotating messages
+  var area = $('msgArea');
+  var idx = Math.floor(Math.random() * messages.length);
 
-  // Floating hearts
-  const heartsContainer = $('hearts');
-  const heartChars = ['♥', '♡', '❤', '💕'];
-
-  function spawnHeart() {
-    if (document.hidden) { setTimeout(spawnHeart, 4000); return; }
-    const el = document.createElement('span');
-    el.className = 'floating-heart';
-    el.textContent = heartChars[Math.floor(Math.random() * heartChars.length)];
-    el.style.left = (Math.random() * 100) + '%';
-    el.style.fontSize = (14 + Math.random() * 18) + 'px';
-    el.style.animationDuration = (8 + Math.random() * 12) + 's';
-    el.style.animationDelay = '0s';
-    heartsContainer.appendChild(el);
-    el.addEventListener('animationend', () => el.remove());
-    setTimeout(spawnHeart, 2500 + Math.random() * 4000);
+  function showMsg() {
+    var bubble = document.createElement('div');
+    bubble.className = 'msg-bubble';
+    bubble.innerHTML = '<span class="heart-icon">♥</span><p class="msg-text">' + messages[idx] + '</p>';
+    area.innerHTML = '';
+    area.appendChild(bubble);
+    idx = (idx + 1) % messages.length;
+    setTimeout(showMsg, 6000);
   }
-  spawnHeart();
+  showMsg();
 
-  // Confetti on arrival
-  function launchConfetti() {
-    const canvas = document.createElement('canvas');
-    canvas.className = 'confetti-canvas';
-    document.body.appendChild(canvas);
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+  // Hearts
+  var hbg = $('hbg');
+  var hc = ['♥','♡'];
+  function heart() {
+    if (document.hidden) { setTimeout(heart, 5000); return; }
+    var e = document.createElement('span');
+    e.className = 'fh';
+    e.textContent = hc[Math.random() > 0.5 ? 1 : 0];
+    e.style.left = (Math.random() * 100) + '%';
+    e.style.fontSize = (12 + Math.random() * 14) + 'px';
+    e.style.animationDuration = (10 + Math.random() * 10) + 's';
+    hbg.appendChild(e);
+    e.addEventListener('animationend', function() { e.remove(); });
+    setTimeout(heart, 3000 + Math.random() * 4000);
+  }
+  heart();
 
-    const pieces = [];
-    const colors = ['#C2185B', '#F8BBD0', '#D4A574', '#E91E63', '#FFD700', '#FF6F61'];
-
-    for (let i = 0; i < 120; i++) {
-      pieces.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height - canvas.height,
-        w: 6 + Math.random() * 8,
-        h: 4 + Math.random() * 6,
-        color: colors[Math.floor(Math.random() * colors.length)],
-        vy: 1.5 + Math.random() * 3,
-        vx: (Math.random() - 0.5) * 2,
-        rot: Math.random() * Math.PI * 2,
-        vr: (Math.random() - 0.5) * 0.1,
-        opacity: 1
+  // Confetti
+  function confetti() {
+    var c = document.createElement('canvas');
+    c.className = 'confetti-canvas';
+    document.body.appendChild(c);
+    var ctx = c.getContext('2d');
+    c.width = innerWidth; c.height = innerHeight;
+    var ps = [], cols = ['#D4456A','#C8956C','#E8819A','#F8BBD0','#FFD700'];
+    for (var i = 0; i < 100; i++) {
+      ps.push({
+        x: Math.random()*c.width, y: Math.random()*c.height - c.height,
+        w: 5+Math.random()*7, h: 3+Math.random()*5,
+        col: cols[Math.floor(Math.random()*cols.length)],
+        vy: 1.5+Math.random()*2.5, vx: (Math.random()-0.5)*2,
+        r: Math.random()*Math.PI*2, vr: (Math.random()-0.5)*0.1, o: 1
       });
     }
-
-    let frame = 0;
+    var f = 0;
     function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      let alive = false;
-      for (const p of pieces) {
-        p.y += p.vy;
-        p.x += p.vx;
-        p.rot += p.vr;
-        if (frame > 180) p.opacity = Math.max(0, p.opacity - 0.008);
-        if (p.opacity <= 0) continue;
+      ctx.clearRect(0,0,c.width,c.height);
+      var alive = false;
+      for (var j = 0; j < ps.length; j++) {
+        var p = ps[j];
+        p.y += p.vy; p.x += p.vx; p.r += p.vr;
+        if (f > 150) p.o = Math.max(0, p.o - 0.01);
+        if (p.o <= 0) continue;
         alive = true;
-        ctx.save();
-        ctx.translate(p.x, p.y);
-        ctx.rotate(p.rot);
-        ctx.globalAlpha = p.opacity;
-        ctx.fillStyle = p.color;
-        ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
-        ctx.restore();
+        ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.r);
+        ctx.globalAlpha = p.o; ctx.fillStyle = p.col;
+        ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h); ctx.restore();
       }
-      frame++;
-      if (alive) requestAnimationFrame(draw);
-      else canvas.remove();
+      f++;
+      if (alive) requestAnimationFrame(draw); else c.remove();
     }
     draw();
   }
