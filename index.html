@@ -320,14 +320,42 @@ body {
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.msg-text.fade-out {
+.msg-text.fade-left {
   opacity: 0;
-  transform: translateY(-8px);
+  transform: translateX(-30px);
 }
 
-.msg-text.fade-in {
+.msg-text.fade-right {
   opacity: 0;
-  transform: translateY(8px);
+  transform: translateX(30px);
+}
+
+.msg-text.fade-enter-left {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.msg-text.fade-enter-right {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.msg-card {
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
+}
+
+.msg-card:active {
+  cursor: grabbing;
+}
+
+.swipe-hint {
+  font-size: 0.65rem;
+  color: var(--text-faint);
+  margin-top: 0.15rem;
+  letter-spacing: 0.03em;
 }
 
 /* Dots indicator */
@@ -448,10 +476,11 @@ body.arrived .celeb {
       <span>27 Eylül, Pazar — Saat 10:00</span>
     </div>
 
-    <div class="msg-card">
+    <div class="msg-card" id="msgCard">
       <span class="msg-heart">♥</span>
       <p class="msg-text" id="msgText"></p>
       <div class="msg-dots" id="msgDots"></div>
+      <span class="swipe-hint">← kaydır →</span>
     </div>
   </div>
 
@@ -514,46 +543,102 @@ body.arrived .celeb {
   }
   tick();
 
-  // Rotating messages
+  // Rotating messages with swipe
   var msgEl = $('msgText');
   var dotsEl = $('msgDots');
-  var idx = Math.floor(Math.random() * messages.length);
-  var dotCount = 5;
+  var msgCard = $('msgCard');
+  var idx = 0;
+  var autoTimer = null;
 
-  // Build dots
-  for (var i = 0; i < dotCount; i++) {
+  // Build dots for each message
+  for (var i = 0; i < messages.length; i++) {
     var dot = document.createElement('span');
     dot.className = 'msg-dot';
     dotsEl.appendChild(dot);
   }
   var dots = dotsEl.querySelectorAll('.msg-dot');
-  var cycle = 0;
 
-  function showMessage() {
-    // Fade out
-    msgEl.classList.add('fade-out');
-    setTimeout(function() {
-      msgEl.textContent = messages[idx];
-      msgEl.classList.remove('fade-out');
-      msgEl.classList.add('fade-in');
-      // Update dots
-      for (var j = 0; j < dots.length; j++) {
-        dots[j].classList.toggle('active', j === cycle % dotCount);
-      }
-      cycle++;
-      idx = (idx + 1) % messages.length;
-      requestAnimationFrame(function() {
-        setTimeout(function() { msgEl.classList.remove('fade-in'); }, 30);
-      });
-    }, 500);
-    setTimeout(showMessage, 5000);
+  function updateDots() {
+    for (var j = 0; j < dots.length; j++) {
+      dots[j].classList.toggle('active', j === idx);
+    }
   }
-  // First message immediately
-  msgEl.textContent = messages[idx];
-  dots[0].classList.add('active');
-  cycle = 1;
-  idx = (idx + 1) % messages.length;
-  setTimeout(showMessage, 5000);
+
+  function goTo(newIdx, direction) {
+    var exitClass = direction === 'left' ? 'fade-left' : 'fade-right';
+    var enterClass = direction === 'left' ? 'fade-enter-left' : 'fade-enter-right';
+    msgEl.classList.add(exitClass);
+    setTimeout(function() {
+      idx = newIdx;
+      msgEl.textContent = messages[idx];
+      updateDots();
+      msgEl.classList.remove(exitClass);
+      msgEl.classList.add(enterClass);
+      requestAnimationFrame(function() {
+        setTimeout(function() { msgEl.classList.remove(enterClass); }, 30);
+      });
+    }, 400);
+  }
+
+  function next() { goTo((idx + 1) % messages.length, 'left'); }
+  function prev() { goTo((idx - 1 + messages.length) % messages.length, 'right'); }
+
+  function resetAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(next, 6000);
+  }
+
+  // First message
+  msgEl.textContent = messages[0];
+  updateDots();
+  autoTimer = setInterval(next, 6000);
+
+  // Touch swipe
+  var startX = 0, startY = 0, swiping = false;
+  msgCard.addEventListener('touchstart', function(e) {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    swiping = true;
+  }, { passive: true });
+
+  msgCard.addEventListener('touchend', function(e) {
+    if (!swiping) return;
+    swiping = false;
+    var dx = e.changedTouches[0].clientX - startX;
+    var dy = e.changedTouches[0].clientY - startY;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+      if (dx < 0) next(); else prev();
+      resetAuto();
+    }
+  }, { passive: true });
+
+  // Mouse drag
+  var mouseDown = false, mouseX = 0;
+  msgCard.addEventListener('mousedown', function(e) {
+    mouseDown = true;
+    mouseX = e.clientX;
+  });
+  document.addEventListener('mouseup', function(e) {
+    if (!mouseDown) return;
+    mouseDown = false;
+    var dx = e.clientX - mouseX;
+    if (Math.abs(dx) > 40) {
+      if (dx < 0) next(); else prev();
+      resetAuto();
+    }
+  });
+
+  // Click dots
+  for (var d = 0; d < dots.length; d++) {
+    (function(di) {
+      dots[di].style.cursor = 'pointer';
+      dots[di].addEventListener('click', function() {
+        if (di === idx) return;
+        goTo(di, di > idx ? 'left' : 'right');
+        resetAuto();
+      });
+    })(d);
+  }
 
   // Hearts
   var hbg = $('hbg');
